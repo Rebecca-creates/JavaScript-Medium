@@ -46,4 +46,31 @@ function progressiveSum(num) {
 
 console.log(progressiveSum([4]));
 
-/* Q6:  */
+/* Q6: Calculate the time. Given a number in seconds, return this number in mm:ss format. */
+
+function calcTIme(seconds) {
+    let timerMinutes = Math.floor(seconds / 60);
+    let timerSeconds = seconds % 60;
+
+    if (timerMinutes.toString().length === 1) {
+        timerMinutes = '0' + timerMinutes
+    }
+
+    return timerMinutes + ':' + timerSeconds;
+}
+
+console.log(calcTIme(70));
+
+/* Q7: Find largest number. Given an array of numbers, return the largest number of the array. */
+
+function getMax(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+console.log(getMax([-100, -200, -300]));
