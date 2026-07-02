@@ -49,14 +49,14 @@ console.log(progressiveSum([4]));
 /* Q6: Calculate the time. Given a number in seconds, return this number in mm:ss format. */
 
 function calcTIme(seconds) {
-    let timerMinutes = Math.floor(seconds / 60);
-    let timerSeconds = seconds % 60;
+  let timerMinutes = Math.floor(seconds / 60);
+  let timerSeconds = seconds % 60;
 
-    if (timerMinutes.toString().length === 1) {
-        timerMinutes = '0' + timerMinutes
-    }
+  if (timerMinutes.toString().length === 1) {
+    timerMinutes = "0" + timerMinutes;
+  }
 
-    return timerMinutes + ':' + timerSeconds;
+  return timerMinutes + ":" + timerSeconds;
 }
 
 console.log(calcTIme(70));
@@ -64,13 +64,67 @@ console.log(calcTIme(70));
 /* Q7: Find largest number. Given an array of numbers, return the largest number of the array. */
 
 function getMax(arr) {
-    let max = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-        }
+  let max = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
     }
-    return max;
+  }
+  return max;
 }
 
 console.log(getMax([-100, -200, -300]));
+
+/* Q8: Reverse a string */
+
+//INCREMENTING FOR LOOP
+function reversedString(str) {
+  let reversedString = "";
+  for (let i = 0; i < str.length; ++i) {
+    //this is how you loop through every character in a string
+    reversedString = str[i] + reversedString;
+  }
+  return reversedString;
+}
+
+console.log(reversedString("abc"));
+
+//DECREMENTNG FOR LOOP (won't have to use this)
+function reversedString(str) {
+  let reversedString = "";
+  for (let i = str.length - 1; i >= 0; --i) {
+    reversedString += str[i];
+  }
+  return reversedString;
+}
+
+console.log(reversedString("abc"));
+
+//ARRAY REVERSE PROPERTY: EASIEST!
+function reversedString(str) {
+  return str.split("").reverse().join("");
+}
+
+console.log(reversedString("abc"));
+
+/* Q9: Turn every element in an array into zeros */
+//FOR LOOP
+function convertToZeros(arr) {
+  let arr = arr;
+  for (let i = 0; i < arr.length; ++i) {
+    arr[i] = 0;
+  }
+  return arr;
+}
+
+console.log(convertToZeros([5, 100, 0]));
+
+//ARRAY 'FILL'
+function convertToZeros(arr) {
+    
+}
+
+//ARRAY 'MAP'
+function convertToZeros(arr) {}
+
+console.log(convertToZeros([5, 100, 0]));
