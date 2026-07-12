@@ -110,21 +110,75 @@ console.log(reversedString("abc"));
 /* Q9: Turn every element in an array into zeros */
 //FOR LOOP
 function convertToZeros(arr) {
-  let arr = arr;
+  let newArr = [];
   for (let i = 0; i < arr.length; ++i) {
-    arr[i] = 0;
+    newArr[i] = 0;
   }
-  return arr;
+  return newArr;
 }
 
-console.log(convertToZeros([5, 100, 0]));
+console.log(convertToZeros([1, 2, 3, 4, 5, 6]));
 
 //ARRAY 'FILL'
 function convertToZeros(arr) {
-    
+  return new Array(arr.length).fill(0);
 }
 
-//ARRAY 'MAP'
-function convertToZeros(arr) {}
+console.log(convertToZeros([1, 2, 3, 4, 5, 6]));
 
-console.log(convertToZeros([5, 100, 0]));
+//ARRAY 'MAP'
+function convertToZeros(arr) {
+  return arr.map((elem) => 0);
+}
+
+console.log(convertToZeros([1, 2, 3, 4, 5, 6]));
+
+/* Q10: Filter out. Given an array of fruits, if it is an apple, remove it from the array. */
+
+//FOR LOOP
+function removeApples(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] !== "apple") {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+console.log(removeApples(["banana", "apple", "orange", "apple"]));
+
+//FILTER
+function removeApples(arr) {
+  return arr.filter((elem) => elem !== "apple");
+}
+
+console.log(removeApples(["banana", "orange", "apple", "cherry"]));
+
+/* Q11: Filter out Falsy Values */
+//FOR LOOP
+function filterOutFalsy(arr) {
+  let truthyArr = [];
+  for (let i = 0; i < arr.length; ++i) {
+    if (!!arr[i] === true) {
+      truthyArr.push(arr[i]);
+    }
+  }
+  return truthyArr;
+}
+
+console.log(filterOutFalsy(["null", "apple", "false", "apple", [], 0]));
+
+//ARRAY FILTER
+function filterOutFalsy(arr) {
+  return arr.filter((elem) => !!elem === true);
+}
+
+console.log(filterOutFalsy(["null", "apple", "false", "apple", [], 0]));
+
+/* Q12: Truthy to true, Falsy to false. Given an array of truthy and falsy values, return the same array of elements into its boolean value.*/
+function convertToBoolean(arr) {
+  return arr.map((elem) => !!elem);
+}
+
+console.log(convertToBoolean([500, 0, "David", "", []]));
