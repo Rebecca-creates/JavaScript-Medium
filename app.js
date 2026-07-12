@@ -157,7 +157,7 @@ console.log(removeApples(["banana", "orange", "apple", "cherry"]));
 
 /* Q11: Filter out Falsy Values */
 //FOR LOOP
-function filterOutFalsy(arr) {
+function filterOutFalsyNew(arr) {
   let truthyArr = [];
   for (let i = 0; i < arr.length; ++i) {
     if (!!arr[i] === true) {
@@ -167,14 +167,14 @@ function filterOutFalsy(arr) {
   return truthyArr;
 }
 
-console.log(filterOutFalsy(["null", "apple", "false", "apple", [], 0]));
+console.log(filterOutFalsyNew([null, "apple", false, "apple", [], 0]));
 
 //ARRAY FILTER
-function filterOutFalsy(arr) {
+function filterOutFalsyNewer(arr) {
   return arr.filter((elem) => !!elem === true);
 }
 
-console.log(filterOutFalsy(["null", "apple", "false", "apple", [], 0]));
+console.log(filterOutFalsyNewer([null, "apple", false, "apple", [], 0]));
 
 /* Q12: Truthy to true, Falsy to false. Given an array of truthy and falsy values, return the same array of elements into its boolean value.*/
 function convertToBoolean(arr) {
